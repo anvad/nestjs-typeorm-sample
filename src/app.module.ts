@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminModule } from './item/admin.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Admin } from './item/admin.entity';
+import { Item2 } from './item/admin.entity';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { Admin } from './item/admin.entity';
       password: process.env.DATABASE_PASSWORD || '',
       database: process.env.DATABASE_NAME || 'postgres',
       port: parseInt(process.env.DATABASE_PORT) || 5432,
-      entities: [Admin],
+      entities: [Item2],
     }),
   ],
   controllers: [AppController],

@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AdminRepository } from './admin.repository';
+import { Item2Repository } from './admin.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Admin } from './admin.entity';
+import { Item2 } from './admin.entity';
 
 describe('AdminService', () => {
-  let service: AdminRepository;
+  let service: Item2Repository;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -16,14 +16,14 @@ describe('AdminService', () => {
           password: process.env.DATABASE_PASSWORD || '',
           database: process.env.DATABASE_NAME || 'postgres',
           port: parseInt(process.env.DATABASE_PORT) || 5432,
-          entities: [Admin],
+          entities: [Item2],
         }),
-        TypeOrmModule.forFeature([Admin]),
+        TypeOrmModule.forFeature([Item2]),
       ],
-      providers: [AdminRepository],
+      providers: [Item2Repository],
     }).compile();
 
-    service = module.get<AdminRepository>(AdminRepository);
+    service = module.get<Item2Repository>(Item2Repository);
   });
 
   it('should be defined', () => {
