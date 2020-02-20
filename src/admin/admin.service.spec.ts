@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Admin1Svc } from './admin.repository';
+import { Admin1Repository } from './admin.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Admin } from './admin.entity';
 
 describe('AdminService', () => {
-  let service: Admin1Svc;
+  let service: Admin1Repository;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -20,10 +20,10 @@ describe('AdminService', () => {
         }),
         TypeOrmModule.forFeature([Admin]),
       ],
-      providers: [Admin1Svc],
+      providers: [Admin1Repository],
     }).compile();
 
-    service = module.get<Admin1Svc>(Admin1Svc);
+    service = module.get<Admin1Repository>(Admin1Repository);
   });
 
   it('should be defined', () => {
