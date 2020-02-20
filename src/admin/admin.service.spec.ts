@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AdminService } from './admin.service';
+import { AdminService } from './admin.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Admin } from './admin.entity';
 
